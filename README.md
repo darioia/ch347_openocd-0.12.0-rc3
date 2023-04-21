@@ -40,23 +40,19 @@ https://github.com/darioia/mych347
 
 3) Fixed all bugs and warning cleanup present in ch347_jtag.c and ch347dll.h
 
-4) aggiornato cache di libreria:
-
-     sudo ldconfig
-
-5) Changed .../openocd-0.12.0-rc3/src/jtag/drivers/Makefile.am adding at the end of old drivers the following lines:
+4) Changed .../openocd-0.12.0-rc3/src/jtag/drivers/Makefile.am adding at the end of old drivers the following lines:
 
      DRIVERFILES += %D%/ch347_jtag.c
      
      %C%_libocdjtagdrivers_la_LIBADD += -lch347
 
-6) Changed .../openocd-0.12.0-rc3/src/jtag/interfaces.c adding at the end of old drivers the following lines:
+5) Changed .../openocd-0.12.0-rc3/src/jtag/interfaces.c adding at the end of old drivers the following lines:
 
      extern struct adapter_driver ch347_adapter_driver;
      
      &ch347_adapter_driver,
 
-7) Added in .../openocd-0.12.0-rc3/contrib/60-openocd.rules the following lines:
+6) Added in .../openocd-0.12.0-rc3/contrib/60-openocd.rules the following lines:
 
      # Espressif USB JTAG/serial debug units
      
@@ -66,7 +62,7 @@ https://github.com/darioia/mych347
      
   copy this file in /etc/udev/rules.d/
   
-7.a) Added in /etc/udev/rules.d//99-ch341a-prog.rules
+6.a) Added in /etc/udev/rules.d//99-ch341a-prog.rules
 
      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55dd", MODE="0664", GROUP="plugdev"
      
