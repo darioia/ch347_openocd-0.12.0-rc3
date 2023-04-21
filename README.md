@@ -7,7 +7,7 @@ CH347Par_Linux_V1.02_HID.zip downloaded from:
 https://github.com/wuxx/USB-HS-Bridge/tree/master/doc
 
 Also the linux driver (if needed) is present there, I have patched the all warning
-and I have released today in:
+and I have released it today in:
 
 https://github.com/darioia/mych347
 
@@ -35,7 +35,8 @@ https://github.com/darioia/mych347
      
      ..../OpenOCD_CH347/bin/ch347.cfg -> .../openocd-0.12.0-rc3/tcl/interface
      
-     ..../USB-HS-Bridge/doc/CH347EVT/EVT/TOOLS/CH347Demo/ExternalLib/CH347DLL_EN.H -> .../openocd-0.12.0-rc3/src/jtag/drivers/ch347dll.h
+     ..../USB-HS-Bridge/doc/CH347EVT/EVT/TOOLS/CH347Demo/ExternalLib/CH347DLL_EN.H -> 
+           .../openocd-0.12.0-rc3/src/jtag/drivers/ch347dll.h
      
 
 3) Fixed all bugs and warning cleanup present in ch347_jtag.c and ch347dll.h
@@ -60,9 +61,9 @@ https://github.com/darioia/mych347
      
      ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1002", MODE="660", GROUP="plugdev", TAG+="uaccess"
      
-  copy this file in /etc/udev/rules.d/
+   copy this file in /etc/udev/rules.d/
   
-6.a) Added in /etc/udev/rules.d//99-ch341a-prog.rules
+7) Added in /etc/udev/rules.d//99-ch341a-prog.rules
 
      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55dd", MODE="0664", GROUP="plugdev"
      
