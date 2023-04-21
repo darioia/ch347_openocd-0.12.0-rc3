@@ -54,7 +54,7 @@ https://github.com/darioia/mych347
 
 6) Added in .../openocd-0.12.0-rc3/contrib/60-openocd.rules the following lines:
 
-     # Espressif USB JTAG/serial debug units
+     \# Espressif USB JTAG/serial debug units
      
      ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", MODE="660", GROUP="plugdev", TAG+="uaccess"
      
@@ -72,6 +72,7 @@ https://github.com/darioia/mych347
 # Build 
 
 Build openocd for all interface handled:
+
      ./configure  --enable-malloc-logging --enable-dummy --enable-rshim --enable-ftdi --enable-stlink --enable-ti-icdi \
      --enable-ulink --enable-usb-blaster-2 --enable-ft232r --enable-vsllink --enable-xds110 --enable-cmsis-dap-v2 --enable-osbdm \
      --enable-opendous --enable-armjtagew --enable-rlink --enable-usbprog --enable-esp-usb-jtag --enable-cmsis-dap --enable-nulink \
